@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_222410) do
 
   create_table "bottoms", force: :cascade do |t|
     t.string "image_url"
-    t.string "designer"
+    t.string "brand"
     t.string "style"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_222410) do
 
   create_table "shoes", force: :cascade do |t|
     t.string "image_url"
-    t.string "designer"
+    t.string "brand"
     t.string "style"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_222410) do
 
   create_table "tops", force: :cascade do |t|
     t.string "image_url"
-    t.string "designer"
+    t.string "brand"
     t.string "style"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

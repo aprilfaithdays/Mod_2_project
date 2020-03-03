@@ -1,0 +1,42 @@
+Outfit:
+User_id
+Occasion (casual, formal, date, etc.) => string
+Season (fall, winter, spring, summer) => string
+Tops_id
+Bottoms_id
+Shoes_id
+
+User:
+Image => string
+Name  => string
+
+Top:
+Image  => string
+Designer  => string
+Style (long sleeve/short/sleeveless)  => string
+
+Bottom:
+Image  => string
+Designer  => string
+Style (pants/shorts/caprice)  => string
+
+Shoe:
+Image  => string
+Designer  => string
+Style (sneakers/heels/sandals/etc)  => string
+
+Relationships:
+User has many Outfits 
+*User has many Tops, Bottoms, Shoes, through Outfits*
+
+Outfits belong to User, Top, Bottom, Shoe 
+Top has many Outfits
+Bottom has many Outfits
+Shoe has many Outfits
+
+User -< Outfits 
+Tops -< Outfits
+Bottoms -< Outfits
+Shoes -< Outfits
+
+
