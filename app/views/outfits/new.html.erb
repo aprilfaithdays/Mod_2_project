@@ -1,0 +1,7 @@
+<h1>Create an Outfit</h1>
+
+<%= form_for @outfit do |f| %>
+    <% @tops.each do |top| %>
+        <%= f.radio_button top.style, :value => "value" %>
+    <% end %>
+<% end %>

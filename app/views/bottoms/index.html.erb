@@ -1,0 +1,8 @@
+<h1>Bottoms</h1>
+
+<% @bottoms.each do |bottom| %>
+    <%= bottom.style %>
+    <%= bottom.brand %>
+    <img src="<%= bottom.image_url%>">
+    
+<% end %>

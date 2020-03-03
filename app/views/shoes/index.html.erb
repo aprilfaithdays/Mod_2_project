@@ -1,0 +1,8 @@
+<h1>Shoes</h1>
+
+<% @shoes.each do |shoe| %>
+    <%= shoe.style %>
+    <%= shoe.brand %>
+    <img src="<%= shoe.image_url%>">
+    
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Tops</h1>
+
+<% @tops.each do |top| %>
+    <%= top.style %>
+    <%= top.brand %>
+    <img src="<%= top.image_url%>">
+    
+<% end %>

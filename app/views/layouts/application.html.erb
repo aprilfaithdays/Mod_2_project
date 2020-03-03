@@ -10,6 +10,16 @@
   </head>
 
   <body>
+      <div class="app-header">
+        <div class="overlay">
+          <%= link_to "My Outfits", "/outfits" %> |       
+          <%= link_to "Create an Outfit", "/outfits/new" %> |
+          <%= link_to "Tops", "/tops" %> |
+          <%= link_to "Bottoms", "/bottoms" %> |
+          <%= link_to "Shoes", "/shoes" %>
+        </div>
+      </div>
+
     <%= yield %>
   </body>
 </html>
