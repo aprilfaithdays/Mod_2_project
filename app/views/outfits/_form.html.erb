@@ -1,0 +1,8 @@
+<%= form_for @outfit do |f| %>
+    <p>Top: <%= f.collection_select :top_id, @tops, :id, :style%></p>
+    <p>Bottom: <%= f.collection_select :bottom_id, @bottoms, :id, :style%></p>
+    <p>Shoe: <%= f.collection_select :shoe_id, @shoes, :id, :style%></p>
+    <p>Occasion: <%= f.text_field :occasion %></p>
+    <p>Season: <%= f.text_field :season %></p>
+    <%= f.submit%>
+<% end %>
