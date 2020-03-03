@@ -1,4 +1,5 @@
 class OutfitsController < ApplicationController
+    before_action :find_outfit, only: [:show, :edit, :update, :destroy]
 
     def index
         @outfits = Outfit.all
@@ -24,25 +25,29 @@ class OutfitsController < ApplicationController
     end
 
     def edit
-        @outfit = Outfit.find(params[:id])
+        # @outfit = Outfit.find(params[:id])
         @tops = Top.all
         @bottoms = Bottom.all
         @shoes = Shoe.all
     end
 
     def update
-        @outfit = Outfit.find(params[:id])
+        # @outfit = Outfit.find(params[:id])
         @outfit.update(outfit_params)
         redirect_to @outfit
     end
 
     def destroy
-        @outfit = Outfit.find(params[:id])
+        # @outfit = Outfit.find(params[:id])
         @outfit.destroy
         redirect_to outfits_path
     end
 
     private
+
+    def find_outfit
+        @outfit = Outfit.find(params[:id])
+    end
 
     def outfit_params
         params.require(:outfit).permit(:occasion, :season, :top_id, :bottom_id, :shoe_id)

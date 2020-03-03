@@ -1,16 +1,16 @@
 <h1>Outfit Show Page</h1>
 
-<%= button_to  "Update Outfit", edit_outfit_path, method: :get%> 
-<%= button_to  "Delete Outfit", @outfit, method: :delete %>  
-
 <%= @outfit.top.brand %> <br>
 <%= @outfit.top.style %> <br>
-<img src= "<%= @outfit.top.image_url %>"> 
+<img class= "standard" src= "<%= @outfit.top.image_url %>"> <br>
 
 <%= @outfit.bottom.brand %> <br>
 <%= @outfit.bottom.style %> <br>
-<img src= "<%= @outfit.bottom.image_url %>"> 
+<img class= "standard" src= "<%= @outfit.bottom.image_url %>"> <br>
 
 <%= @outfit.shoe.brand %> <br>
 <%= @outfit.shoe.style %> <br>
-<img src= "<%= @outfit.shoe.image_url %>"> 
+<img class= "standard" src= "<%= @outfit.shoe.image_url %>"> <br>
+
+<%= button_to  "Update Outfit", edit_outfit_path, method: :get%> 
+<%= button_to  "Delete Outfit", @outfit, method: :delete %>  

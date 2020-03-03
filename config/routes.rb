@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :shoes
-  resources :bottoms
-  resources :tops
+  resources :shoes, only: [:index]
+  resources :bottoms, only: [:index]
+  resources :tops, only: [:index]
   resources :users
   resources :outfits
 

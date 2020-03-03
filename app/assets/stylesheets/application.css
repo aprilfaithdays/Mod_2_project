@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .standard {
+     width: 200px;
+     height: auto;
+ }
+
+
+ /* .borders {
+    border: 1px solid black;
+ } */

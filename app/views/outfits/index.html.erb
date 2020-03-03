@@ -1,6 +1,8 @@
 <h1>My Outfits</h1>
 <% @outfits.each do |outfit| %>
+    <%= link_to  outfit.occasion, outfit %>
     <%= outfit.top.style %> <br>
     <%= outfit.bottom.style %> <br>
     <%= outfit.shoe.style %> <br>
+    
 <% end %>
