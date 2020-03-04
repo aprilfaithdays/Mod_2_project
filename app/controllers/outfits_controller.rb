@@ -8,6 +8,13 @@ class OutfitsController < ApplicationController
 
     def show
         @outfit = Outfit.find(params[:id])
+        # byebug
+        if  @outfit.user_id == session[:user_id]
+            render :show
+        else
+            redirect_to myoutfits_path
+        end
+    
     end
 
     def new
@@ -20,7 +27,7 @@ class OutfitsController < ApplicationController
 
     def create
         @outfit = Outfit.new(outfit_params)
-        @outfit.user_id = 1 #session[:user_id]
+        @outfit.user_id = session[:user_id]
         if @outfit.save
             redirect_to @outfit
         else
@@ -47,6 +54,11 @@ class OutfitsController < ApplicationController
         # @outfit = Outfit.find(params[:id])
         @outfit.destroy
         redirect_to outfits_path
+    end
+
+    def myoutfits
+        # byebug
+        @outfits = Outfit.all.select{|outfit| outfit.user_id == session[:user_id]}
     end
 
     private

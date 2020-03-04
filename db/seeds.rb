@@ -94,3 +94,5 @@ ws5 = Shoe.create(brand: "Nike", style: "Nike Air Force 1 '07", image_url: "http
 # ws10 = Top.create(brand: "Nike", style: , image_url: )
 
 User.create(name: "Chris", username: "c75")
+
+p "everything seeded :D"

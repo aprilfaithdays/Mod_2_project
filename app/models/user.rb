@@ -1,4 +1,5 @@
 class User < ApplicationRecord
     has_many :outfits
-    # has_secure_password
+    has_secure_password
+    
 end
