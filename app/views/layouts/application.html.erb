@@ -14,13 +14,13 @@
         <div class="overlay">
           <% if current_user %>
             Logged in as: <%= current_user.name %>
-          <% end %>
           <%= link_to "My Outfits", "/myoutfits" %> |       
           <%= link_to "Create an Outfit", "/outfits/new" %> |
           <%= link_to "Tops", "/tops" %> |
           <%= link_to "Bottoms", "/bottoms" %> |
           <%= link_to "Shoes", "/shoes" %> |
           <%= link_to "Log Out", "/logout" %>
+          <% end %>
         </div>
       </div>
 
