@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_222410) do
   end
 
   create_table "outfits", force: :cascade do |t|
-    t.string "occasion"
+    t.string "name"
     t.string "season"
     t.integer "user_id"
     t.integer "top_id"

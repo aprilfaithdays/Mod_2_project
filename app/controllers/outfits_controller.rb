@@ -15,13 +15,18 @@ class OutfitsController < ApplicationController
         @tops = Top.all
         @bottoms = Bottom.all
         @shoes = Shoe.all
+        @seasons = Outfit.seasons
     end
 
     def create
         @outfit = Outfit.new(outfit_params)
         @outfit.user_id = 1 #session[:user_id]
-        @outfit.save
-        redirect_to @outfit
+        if @outfit.save
+            redirect_to @outfit
+        else
+            flash[:errors] = @outfit.errors.full_messages
+            redirect_to new_outfit_path
+        end
     end
 
     def edit
@@ -29,6 +34,7 @@ class OutfitsController < ApplicationController
         @tops = Top.all
         @bottoms = Bottom.all
         @shoes = Shoe.all
+        @seasons = Outfit.seasons
     end
 
     def update
@@ -50,6 +56,6 @@ class OutfitsController < ApplicationController
     end
 
     def outfit_params
-        params.require(:outfit).permit(:occasion, :season, :top_id, :bottom_id, :shoe_id)
+        params.require(:outfit).permit(:name, :season, :top_id, :bottom_id, :shoe_id)
     end
 end 
