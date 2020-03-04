@@ -1,6 +1,11 @@
 <h1>Sign Up</h1>
 
 <h4><%= flash[:notice] %></h4>
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <h4><%= error %></h4>
+    <% end %>
+<% end %>
 
 <%= form_for @user do |f| %>
     Name: <%= f.text_field :name %> <br>
