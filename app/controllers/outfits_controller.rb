@@ -53,7 +53,7 @@ class OutfitsController < ApplicationController
     def destroy
         # @outfit = Outfit.find(params[:id])
         @outfit.destroy
-        redirect_to outfits_path
+        redirect_to myoutfits_path
     end
 
     def myoutfits

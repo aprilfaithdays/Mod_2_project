@@ -12,6 +12,9 @@
   <body>
       <div class="app-header">
         <div class="overlay">
+          <% if current_user %>
+            Logged in as: <%= current_user.name %>
+          <% end %>
           <%= link_to "My Outfits", "/myoutfits" %> |       
           <%= link_to "Create an Outfit", "/outfits/new" %> |
           <%= link_to "Tops", "/tops" %> |

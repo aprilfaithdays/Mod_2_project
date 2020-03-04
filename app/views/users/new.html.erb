@@ -8,9 +8,9 @@
 <% end %>
 
 <%= form_for @user do |f| %>
-    Name: <%= f.text_field :name %> <br>
-    Username: <%= f.text_field :username %> <br>
-    Password: <%= f.password_field :password %> <br>
+    <p>Name: <%= f.text_field :name %></p>
+    <p>Username: <%= f.text_field :username %></p>
+    <p>Password: <%= f.password_field :password %></p>
 <%= f.submit %>
 <%= button_to  "Log In", login_path, method: "get" %>
 <% end %>
