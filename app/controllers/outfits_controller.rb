@@ -1,20 +1,13 @@
 class OutfitsController < ApplicationController
     before_action :find_outfit, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @outfits = Outfit.all
-        # @outfit = Outfit.find_by(session[:user_id])
-    end
-
     def show
         @outfit = Outfit.find(params[:id])
-        # byebug
         if  @outfit.user_id == session[:user_id]
             render :show
         else
             redirect_to myoutfits_path
         end
-    
     end
 
     def new
@@ -37,7 +30,6 @@ class OutfitsController < ApplicationController
     end
 
     def edit
-        # @outfit = Outfit.find(params[:id])
         @tops = Top.all
         @bottoms = Bottom.all
         @shoes = Shoe.all
@@ -45,19 +37,16 @@ class OutfitsController < ApplicationController
     end
 
     def update
-        # @outfit = Outfit.find(params[:id])
         @outfit.update(outfit_params)
         redirect_to @outfit
     end
 
     def destroy
-        # @outfit = Outfit.find(params[:id])
         @outfit.destroy
         redirect_to myoutfits_path
     end
 
     def myoutfits
-        # byebug
         @outfits = Outfit.all.select{|outfit| outfit.user_id == session[:user_id]}
     end
 

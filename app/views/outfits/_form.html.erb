@@ -1,15 +1,16 @@
-
-<% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-        <%= error %> <br>
+<body class="dope_gif">
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <%= error %> <br>
+        <% end %>
     <% end %>
-<% end %>
 
-<%= form_for @outfit do |f| %>
-    <p>Outfit Name: <%= f.text_field :name %></p>
-    <p>Top: <%= f.collection_select :top_id, @tops, :id, :style, prompt: true %></p>
-    <p>Bottom: <%= f.collection_select :bottom_id, @bottoms, :id, :style, prompt: true%></p>
-    <p>Shoe: <%= f.collection_select :shoe_id, @shoes, :id, :style, prompt: true%></p>
-    <p>Season: <%= f.select :season, @seasons.map {|season| season }, prompt: true %></p>
-    <%= f.submit%>
-<% end %>
+    <%= form_for @outfit do |f| %>
+        <p>Outfit Name: <%= f.text_field :name, :class => "forms" %></p>
+        <p>Top: <%= f.collection_select :top_id, @tops, :id, :style, prompt: true %></p>
+        <p>Bottom: <%= f.collection_select :bottom_id, @bottoms, :id, :style, prompt: true%></p>
+        <p>Shoe: <%= f.collection_select :shoe_id, @shoes, :id, :style, prompt: true%></p>
+        <p>Season: <%= f.select :season, @seasons.map {|season| season }, prompt: true %></p>
+        <%= f.submit(:class => "buttons")%>
+    <% end %>
+</body>

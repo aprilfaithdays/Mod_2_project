@@ -1,16 +1,18 @@
-<h1>Sign Up</h1>
+<body class="dope_gif">    
+    <h1>Sign Up</h1>
 
-<h4><%= flash[:notice] %></h4>
-<% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-        <h4><%= error %></h4>
+    <h4><%= flash[:notice] %></h4>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <h4><%= error %></h4>
+        <% end %>
     <% end %>
-<% end %>
 
-<%= form_for @user do |f| %>
-    <p>Name: <%= f.text_field :name %></p>
-    <p>Username: <%= f.text_field :username %></p>
-    <p>Password: <%= f.password_field :password %></p>
-<%= f.submit "Sign Up"%>
-<% end %>
-<%= button_to  "Log In", login_path, method: "get" %>
+    <%= form_for @user do |f| %>
+        <p>Name: <%= f.text_field :name %></p>
+        <p>Username: <%= f.text_field :username %></p>
+        <p>Password: <%= f.password_field :password %></p>
+    <%= f.submit("Sign Up", :class => "buttons") %>
+    <% end %>
+    <%= button_to("Login", login_path, method: "get", :class => "buttons") %>
+</body>

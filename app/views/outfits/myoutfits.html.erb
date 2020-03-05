@@ -1,7 +1,13 @@
 <h1>My Outfits</h1>
-<% @outfits.each do |outfit| %>
-    Outfit Name: <%= link_to  outfit.name, outfit %><br>
-    Top Style: <%= outfit.top.style %><br>
-    Bottom Style: <%= outfit.bottom.style %><br>
-    Shoe Style: <%= outfit.shoe.style %><br>
-<% end %>
+<div class= "row">
+    <% @outfits.each do |outfit| %>
+        <div class= "column">
+            <div class="card">
+                <h3>Outfit Name: <%= link_to  outfit.name, outfit %><br></h3>
+                <img class= "standard" src= "<%= outfit.top.image_url %>">
+                <img class= "standard" src= "<%= outfit.bottom.image_url %>">
+                <img class= "standard" src= "<%= outfit.shoe.image_url %>"><br>
+            </div>
+        </div>  
+    <% end %>
+</div>

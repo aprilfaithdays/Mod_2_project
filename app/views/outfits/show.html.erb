@@ -1,16 +1,26 @@
-<h1>Outfit Show Page</h1>
-
-<%= @outfit.top.brand %> <br>
-<%= @outfit.top.style %> <br>
-<img class= "standard" src= "<%= @outfit.top.image_url %>"> <br>
-
-<%= @outfit.bottom.brand %> <br>
-<%= @outfit.bottom.style %> <br>
-<img class= "standard" src= "<%= @outfit.bottom.image_url %>"> <br>
-
-<%= @outfit.shoe.brand %> <br>
-<%= @outfit.shoe.style %> <br>
-<img class= "standard" src= "<%= @outfit.shoe.image_url %>"> <br>
-
-<%= button_to  "Update Outfit", edit_outfit_path, method: :get%> 
-<%= button_to  "Delete Outfit", @outfit, method: :delete %>  
+<h1><%= @outfit.name %></h1>
+<div class= "show_row">
+    <div class= "column">
+        <div class="card">
+            <%= @outfit.top.brand %> <br>
+            <%= @outfit.top.style %> <br>
+            <img class= "standard" src= "<%= @outfit.top.image_url %>"> <br>
+        </div>
+    </div>
+    <div class= "column">
+        <div class="card">
+            <%= @outfit.bottom.brand %> <br>
+            <%= @outfit.bottom.style %> <br>
+            <img class= "standard" src= "<%= @outfit.bottom.image_url %>"> <br>
+        </div>
+    </div>
+    <div class= "column">
+        <div class="card">
+            <%= @outfit.shoe.brand %> <br>
+            <%= @outfit.shoe.style %> <br>
+            <img class= "standard" src= "<%= @outfit.shoe.image_url %>">
+        </div>
+    </div>
+</div>
+<%= button_to("Update Outfit", edit_outfit_path, method: :get, :class => "show_buttons")%> 
+<%= button_to("Delete Outfit", @outfit, method: :delete, :class => "show_buttons" )%>  

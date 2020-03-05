@@ -1,8 +1,13 @@
 <h1>Shoes</h1>
 
-<% @shoes.each do |shoe| %>
-    <b>Brand: </b><%= shoe.brand %> <br>
-    <b>Style Name: </b><%= shoe.style %> <br>
-    <img class= "standard" src="<%= shoe.image_url%>"> <br>
-    
-<% end %>
+<div class= "row">
+    <% @shoes.each do |shoe| %>
+        <div class= "column">
+            <div class="card">
+                <img class= "standard" src="<%= shoe.image_url%>">
+                <%= shoe.brand %> <br>
+                <%= shoe.style %> <br>
+            </div>
+        </div>
+    <% end %>
+</div>

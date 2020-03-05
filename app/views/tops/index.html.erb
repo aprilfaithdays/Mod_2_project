@@ -1,9 +1,13 @@
 <h1>Tops</h1>
 
-<% @tops.each do |top| %>
-    <div class= "borders">
-    <b>Brand:</b><%= top.brand %>  <br>
-    <b>Style Name:</b> <%= top.style %> <br>
-    <img class= "standard" src="<%= top.image_url%>"> 
-    </div>
-<% end %>
+<div class= "row">
+    <% @tops.each do |top| %>
+        <div class= "column">
+            <div class="card">
+                <img class= "standard" src="<%= top.image_url%>">
+                <%= top.brand %> <br>
+                <%= top.style %> <br>
+            </div>
+        </div>
+    <% end %>
+</div>
