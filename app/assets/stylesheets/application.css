@@ -29,6 +29,7 @@ h1 {
     padding: 10px;
     color: rgb(11, 44, 11);
     text-align:center;
+    background-attachment: fixed;
 }
 
 :visited {
@@ -80,7 +81,9 @@ h1 {
     text-align: center;
     background-color: #f1f1f1;
     border-radius: 12%;
-    margin-top: 15px;
+    margin-top: 20px;
+    height: 350px;
+    width: auto;  
   }
 
   .buttons {
