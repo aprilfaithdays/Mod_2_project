@@ -2,7 +2,7 @@
 <div class= "row">
     <% @outfits.each do |outfit| %>
         <div class= "column">
-            <div class="card">
+            <div class="myoutfits_card">
                 <h3>Outfit Name: <%= link_to  outfit.name, outfit %><br></h3>
                 <img class= "standard" src= "<%= outfit.top.image_url %>">
                 <img class= "standard" src= "<%= outfit.bottom.image_url %>">
